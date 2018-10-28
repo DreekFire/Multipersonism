@@ -1,0 +1,179 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	color: white;
+	height: 100%;
+	overflow: hidden;
+}
+
+p {
+	margin: 0;
+}
+
+#navBar {
+	background-color: #2D0F41;
+	height: 10%;
+	margin: 0;
+	padding: 0;
+}
+
+#backButton {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    position: relative;
+    left: 1mm;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(135deg);
+}
+
+#titleDiv {
+	display: block;
+	background-color: black;
+	height: 5%;
+	width: 100%;
+}
+
+#centerBox {
+	display: none;
+	height: 25%;
+	width: 100%;
+}
+
+#paragraph {
+	display: inline;
+	background-color: purple;
+	height: 100%;
+	width: 100%;
+}
+
+#map {
+	display: block;
+	position: relative;
+	background-color: #2D0F41;
+	overflow: hidden;
+	height: 100%;
+}
+
+#root {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	transform: translateY(-50%);
+	cursor: move;
+}
+
+ul {
+	list-style-type: none;
+	position: relative;
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	padding-left: 20px;
+}
+
+li {
+	position: relative;
+	display: flex;
+}
+
+li > .pNode::before {
+	position: absolute;
+	content: "";
+	display: block;
+	height: 100%;
+	width: 15px;
+	border-left: 1px solid white;
+}
+
+li:first-child > .pNode::before {
+	top: 50%;
+	border-radius: 5px 0 0 0;
+	border-top: 1px solid white;
+	border-bottom: none;
+	height: 50%;
+}
+
+li:last-child > .pNode::before{
+	border-radius: 0 0 0 5px;
+	border-bottom: 1px solid white;
+	border-top: none;
+	height: 50%;
+}
+
+li:only-child > .pNode::before {
+	height: 2;
+	top: 50%;
+	border-radius: 0;
+	border-top: 1px solid white;
+	border-bottom: none;
+	border-left: none;
+}
+
+li:not(:first-child):not(:last-child)::before {
+	content: "";
+	display: block;
+	position: absolute;
+	height: 2px;
+	width: 15px;
+	top: 50%;
+	border-radius: 0;
+	border-top: 1px solid white;
+	border-bottom: none;
+}
+
+.pNode {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	vertical-align: middle;
+}
+
+.point {
+	display: flex;
+	margin: 15px;
+	flex-basis: auto;
+	align-self: center;
+	width: 10px;
+	height: 10px;
+	background: yellow;
+	border-radius: 50%;
+	cursor: ;
+}
+
+.point:hover {
+	box-shadow: 0 0 10px rgba(255,255,255,0.9);
+}
+
+.point::after {
+	content: "";
+	display: block;
+	position: absolute;
+	height: 2px;
+	width: 35px;
+	top: 50%;
+	left: 25px;
+	border-radius: 0;
+	border-top: 1px solid white;
+	border-bottom: none;
+}
+
+.point:only-child::after {
+	display: none;
+}
+
+/*.point::after {
+	content: "";
+	display: block;
+	width: 20px;
+	border-top: 1px solid white;
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+}*/
+
+.is-hover {
+  box-shadow: 0 0 10px rgba(255,255,255,0.9);
+}
