@@ -25,6 +25,7 @@ p {
     display: inline-block;
     padding: 3px;
     transform: rotate(135deg);
+    cursor: pointer;
 }
 
 #titleDiv {
@@ -36,8 +37,11 @@ p {
 
 #centerBox {
 	display: none;
-	height: 25%;
+	position: absolute;
+	background: white;
+	height: 30%;
 	width: 100%;
+	z-index: 1;
 }
 
 #paragraph {
@@ -61,6 +65,7 @@ p {
 	width: 100%;
 	transform: translateY(-50%);
 	cursor: move;
+	cursor: -webkit-grab;
 }
 
 ul {
@@ -70,6 +75,23 @@ ul {
 	align-items: flex-start;
 	flex-direction: column;
 	padding-left: 20px;
+}
+
+ul::before {
+	content: "";
+	display: block;
+	position: absolute;
+	height: 2px;
+	width: 35px;
+	top: 50%;
+	left: -15px;
+	border-radius: 0;
+	border-top: 1px solid white;
+	border-bottom: none;
+}
+
+ul:empty::before {
+	display: none;
 }
 
 li {
@@ -135,32 +157,15 @@ li:not(:first-child):not(:last-child)::before {
 	margin: 15px;
 	flex-basis: auto;
 	align-self: center;
-	width: 10px;
-	height: 10px;
-	background: yellow;
+	width: 15px;
+	height: 15px;
+	background: green;
 	border-radius: 50%;
-	cursor: ;
+	cursor: pointer;
 }
 
 .point:hover {
 	box-shadow: 0 0 10px rgba(255,255,255,0.9);
-}
-
-.point::after {
-	content: "";
-	display: block;
-	position: absolute;
-	height: 2px;
-	width: 35px;
-	top: 50%;
-	left: 25px;
-	border-radius: 0;
-	border-top: 1px solid white;
-	border-bottom: none;
-}
-
-.point:only-child::after {
-	display: none;
 }
 
 /*.point::after {

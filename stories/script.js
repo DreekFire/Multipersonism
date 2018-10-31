@@ -7,6 +7,9 @@ $(document).ready(function() {
 	$('.point').on('click', function() {
 		$('#centerBox').css('display', 'block')
 	})
+  $('#backButton').on('click', function() {
+    $('#centerBox').css('display', 'none')
+  })
 	dragElement(document.getElementById("root"));
 });
 
